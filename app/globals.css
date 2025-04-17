@@ -116,9 +116,24 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border-default outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bg-default text-fg-default;
+  }
+}
+
+@layer utilities {
+  .focus-visible-state {
+    @apply focus-visible:outline-border-focus focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  .focus-visible-danger-state {
+    @apply focus-visible:outline-border-danger-emphasis focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  .invalid-state {
+    @apply invalid:outline-border-danger-emphasis invalid:outline-2 invalid:outline-offset-2 aria-invalid:outline-border-danger-emphasis aria-invalid:outline-2 aria-invalid:outline-offset-2;
+  }
+  .disabled-state {
+    @apply disabled:pointer-events-none disabled:opacity-50;
   }
 }
