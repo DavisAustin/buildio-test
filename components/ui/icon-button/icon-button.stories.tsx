@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Mail } from "lucide-react";
+import { Plus } from "lucide-react";
 
-import { Button } from "@/components/ui/button/button";
+import { IconButton } from "@/components/ui/icon-button/icon-button";
 
 /**
  * Displays a button or a component that looks like a button.
  */
 const meta = {
-  title: "ui/Button",
-  component: Button,
+  title: "ui/IconButton",
+  component: IconButton,
   tags: ["autodocs"],
   argTypes: {
     children: {
@@ -21,9 +21,9 @@ const meta = {
   args: {
     variant: "primary",
     size: "default",
-    children: "Button",
+    children: <Plus />,
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
 
@@ -85,40 +85,19 @@ export const Danger: Story = {
 };
 
 /**
- * Use the `link` button to reduce emphasis on tertiary actions, such as
- * hyperlink or navigation, providing a text-only interactive element.
- */
-export const Link: Story = {
-  args: {
-    variant: "link",
-  },
-};
-
-/**
  * Add the `disabled` prop to a button to prevent interactions and add a
  * loading indicator, such as a spinner, to signify an in-progress action.
  */
 export const Loading: Story = {
+  render: (args) => (
+    <IconButton {...args}>
+      <Plus />
+    </IconButton>
+  ),
   args: {
     ...Secondary.args,
     isLoading: true,
     disabled: true,
-  },
-};
-
-/**
- * Add an icon element to a button to enhance visual communication and
- * providing additional context for the action.
- */
-export const WithIcon: Story = {
-  render: (args) => (
-    <Button {...args}>
-      Login with Email Button
-    </Button>
-  ),
-  args: {
-    ...Secondary.args,
-    leadingVisual: <Mail />,
   },
 };
 

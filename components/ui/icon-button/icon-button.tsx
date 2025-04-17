@@ -21,36 +21,31 @@ const buttonVariants = cva(
           "bg-bg-default text-fg-accent hover:bg-bg-accent-hover",
         danger:
           "bg-bg-danger-emphasis text-fg-on-emphasis shadow-sm hover:bg-bg-danger-emphasis-hover focus-visible-danger-state",
-        link: "text-fg-default underline-offset-4 hover:underline",
       },
       size: {
-        sm: "h-6 rounded-default gap-1.5 px-2 pb-0.25",
-        default: "h-8 gap-2 px-3 pb-0.25",
+        sm: "size-6",
+        default: "size-8",
       },
     },
     defaultVariants: {
-      variant: "primary",
+      variant: "tertiary",
       size: "default",
     },
   },
 );
 
-function Button({
+function IconButton({
   className,
   variant,
   size,
-  isLoading,
-  leadingVisual,
-  trailingVisual,
-  children,
+  isLoading = false,
   asChild = false,
+  children,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
     isLoading?: boolean;
-    leadingVisual?: React.ReactNode;
-    trailingVisual?: React.ReactNode;
   }) {
   const Comp = asChild ? Slot : "button";
 
@@ -60,11 +55,11 @@ function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      {isLoading ? <Loader2 className="animate-spin" /> : leadingVisual}
-      <Slottable>{children}</Slottable>
-      {trailingVisual}
+      <Slottable>
+        {isLoading ? <Loader2 className="size-4 animate-spin" /> : children}
+      </Slottable>
     </Comp>
   );
 }
 
-export { Button, buttonVariants };
+export { IconButton, buttonVariants };
