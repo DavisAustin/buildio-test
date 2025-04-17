@@ -7,8 +7,10 @@ export default function Home() {
     <main>
       <h1>Click this button</h1>
       <div className="align-center flex gap-2">
-        <Button variant="secondary" disabled><a href="">Click Me</a></Button>
-        <IconButton asChild variant="tertiary">
+        {/* disabled state isn't working when 'asChild' is added as a prop */}
+        <Button asChild variant="secondary" isLoading><a href="">Click Me</a></Button>
+        {/* disabled state isn't working and loading icon is too large when 'asChild' is added as a prop */}
+        <IconButton asChild variant="tertiary" isLoading>
           <a href="#">
             <Plus />
           </a>
