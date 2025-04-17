@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Slot, Slottable } from "@radix-ui/react-slot";
+import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
 
@@ -40,7 +40,6 @@ function IconButton({
   size,
   isLoading = false,
   asChild = false,
-  children,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
@@ -53,11 +52,14 @@ function IconButton({
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      disabled={isLoading || props.disabled}
       {...props}
     >
-      <Slottable>
-        {isLoading ? <Loader2 className="size-4 animate-spin" /> : children}
-      </Slottable>
+      {isLoading ? (
+        <Loader2 className="size-4 animate-spin" />
+      ) : (
+        props.children
+      )}
     </Comp>
   );
 }
