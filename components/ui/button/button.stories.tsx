@@ -45,22 +45,22 @@ export const Secondary: Story = {
 };
 
 /**
- * Use the `secondary-accent` button to reduce emphasis on secondary actions, such as
- * canceling or dismissing a dialog.
- */
-export const SecondaryAccent: Story = {
-  args: {
-    variant: "secondary-accent",
-  },
-};
-
-/**
  * Use the `tertiary` button is minimalistic and subtle, for less intrusive
  * actions.
  */
 export const Tertiary: Story = {
   args: {
     variant: "tertiary",
+  },
+};
+
+/**
+ * Use the `secondary-accent` button to reduce emphasis on secondary actions, such as
+ * canceling or dismissing a dialog.
+ */
+export const SecondaryAccent: Story = {
+  args: {
+    variant: "secondary-accent",
   },
 };
 
@@ -75,12 +75,30 @@ export const TertiaryAccent: Story = {
 };
 
 /**
- * Use the `danger` button to indicate errors, alerts, or the need for
+ * Use the `primary-danger` button to indicate errors, alerts, or the need for
  * immediate attention.
  */
-export const Danger: Story = {
+export const PrimaryDanger: Story = {
   args: {
-    variant: "danger",
+    variant: "primary-danger",
+  },
+};
+
+/**
+ * Use the `secondary-danger` button to indicate...
+ */
+export const SecondaryDanger: Story = {
+  args: {
+    variant: "secondary-danger",
+  },
+};
+
+/**
+ * Use the `tertiary-danger` button to indicate...
+ */
+export const TertiaryDanger: Story = {
+  args: {
+    variant: "tertiary-danger",
   },
 };
 
@@ -111,11 +129,7 @@ export const Loading: Story = {
  * providing additional context for the action.
  */
 export const WithIcon: Story = {
-  render: (args) => (
-    <Button {...args}>
-      Login with Email Button
-    </Button>
-  ),
+  render: (args) => <Button {...args}>Login with Email Button</Button>,
   args: {
     ...Secondary.args,
     leadingVisual: <Mail />,

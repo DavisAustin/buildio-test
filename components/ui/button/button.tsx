@@ -14,13 +14,17 @@ const buttonVariants = cva(
           "bg-bg-accent-emphasis text-fg-on-emphasis shadow-sm hover:bg-bg-accent-emphasis-hover",
         secondary:
           "border border-border-default bg-bg-default text-fg-default shadow-sm hover:bg-bg-default-hover hover:text-fg-default",
-        "secondary-accent":
-          "border border-border-accent bg-bg-default text-fg-accent shadow-sm hover:bg-bg-accent-hover hover:text-fg-accent",
         tertiary: "hover:bg-bg-default-hover hover:text-fg-default",
+        "secondary-accent":
+        "border border-border-accent bg-bg-default text-fg-accent shadow-sm hover:bg-bg-accent-hover hover:text-fg-accent",
         "tertiary-accent":
           "bg-bg-default text-fg-accent hover:bg-bg-accent-hover",
-        danger:
+        "primary-danger":
           "bg-bg-danger-emphasis text-fg-on-emphasis shadow-sm hover:bg-bg-danger-emphasis-hover focus-visible-danger-state",
+        "secondary-danger":
+          "border border-border-danger bg-bg-default text-fg-danger shadow-sm hover:bg-bg-danger-hover hover:text-fg-danger focus-visible-danger-state",
+        "tertiary-danger":
+          "bg-bg-default text-fg-danger hover:bg-bg-danger-hover focus-visible-danger-state",
         link: "text-fg-default underline-offset-4 hover:underline",
       },
       size: {
