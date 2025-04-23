@@ -9,7 +9,6 @@ const meta = {
   title: "ui/Avatar",
   component: Avatar,
   tags: ["autodocs"],
-  argTypes: {},
   render: (args) => (
     <Avatar {...args}>
       <AvatarImage src="https://github.com/shadcn.png" />
@@ -19,6 +18,9 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  args: {
+    size: "default",
+  }
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
@@ -26,6 +28,46 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * The default form of the avatar.
+ * The `xs` form of the avatar.
  */
-export const Default: Story = {};
+export const ExtraSmallAvatar: Story = {
+  args: {
+    size: "xs",
+  },
+};
+
+/**
+ * The 'sm' form of the avatar.
+ */
+export const SmallAvatar: Story = {
+  args: {
+    size: "sm",
+  },
+};
+
+/**
+ * The 'default' form of the avatar.
+ */
+export const DefaultAvatar: Story = {
+  args: {
+    size: "default",
+  },
+};
+
+/**
+ * The 'lg' form of the avatar.
+ */
+export const LargeAvatar: Story = {
+  args: {
+    size: "lg",
+  },
+};
+
+/**
+ * The 'xl' form of the avatar.
+ */
+export const ExtraLargeAvatar: Story = {
+  args: {
+    size: "xl",
+  },
+};
