@@ -7,6 +7,7 @@ figma.connect(
   "https://www.figma.com/design/7gFdOSsbUxcHxyp84Ql45Z/%F0%9F%8C%90-OPL-Components-Beta?node-id=13%3A7982",
   {
     props: {
+      label: figma.string("label"),
       disabled: figma.enum("state", {
         disabled: true,
       }),
@@ -25,16 +26,18 @@ figma.connect(
         default: "default",
       }),
       leadingVisual: figma.instance("leadingVisual"),
-      trailingVisual: figma.instance("trailingVisual")
+      trailingVisual: figma.instance("trailingVisual"),
     },
-    example: ({disabled, variant, size, leadingVisual, trailingVisual}) => (
+    example: ({label, disabled, variant, size, leadingVisual, trailingVisual}) => (
       <Button
         disabled={disabled}
         variant={variant}
         size={size}
         leadingVisual={leadingVisual}
         trailingVisual={trailingVisual}
-      />
+      >
+        {label}
+      </Button>
     ),
   },
 );

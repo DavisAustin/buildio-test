@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-default text-body-md disabled-state [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 focus-visible-state invalid-state",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-default text-body-md disabled-state [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 focus-visible-state invalid-state",
   {
     variants: {
       variant: {
@@ -28,8 +28,8 @@ const buttonVariants = cva(
         link: "text-fg-default underline-offset-4 hover:underline",
       },
       size: {
-        sm: "h-6 rounded-default gap-1.5 px-2 pb-0.25",
-        default: "h-8 gap-2 px-3 pb-0.25",
+        sm: "text-body-sm h-6 rounded-default gap-1 px-2 pb-0.25 [&_svg:not([class*='size-'])]:size-3",
+        default: "h-8 gap-2 px-3 pb-0.25 [&_svg:not([class*='size-'])]:size-4",
       },
     },
     defaultVariants: {
