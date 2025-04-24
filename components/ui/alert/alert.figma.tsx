@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, AlertTitle, AlertDescription } from "./alert";
-import { CircleAlert, Info } from "lucide-react";
+import { CheckCircle, CircleAlert, Info } from "lucide-react";
 import { figma } from "@figma/code-connect";
 
 figma.connect(
@@ -10,6 +10,8 @@ figma.connect(
     props: {
       variant: figma.enum("variant", {
         default: <Info className="text-fg-info size-4" />,
+        success: <CheckCircle className="text-fg-success size-4" />,
+        info: <Info className="text-fg-info size-4" />,
         danger: <CircleAlert className="text-fg-danger size-4" />,
       }),
       alertTitle: figma.string("alertTitle"),
