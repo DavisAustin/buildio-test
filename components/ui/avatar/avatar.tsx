@@ -7,15 +7,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const avatarVariants = cva(
-  "relative flex shrink-0 overflow-hidden rounded-full",
+  "relative flex shrink-0 overflow-hidden rounded-full [&_svg]:shrink-0",
   {
     variants: {
       size: {
-        xs: "size-4",
-        sm: "size-6",
-        default: "size-8",
-        lg: "size-10",
-        xl: "size-12",
+        xs: "size-4 text-body-xs [&_svg:not([class*='size-'])]:size-2.5",
+        sm: "size-6 text-body-sm [&_svg:not([class*='size-'])]:size-3.5",
+        default: "size-8 text-body-md [&_svg:not([class*='size-'])]:size-4",
+        lg: "size-10 text-body-lg [&_svg:not([class*='size-'])]:size-4",
+        xl: "size-12 text-body-lg [&_svg:not([class*='size-'])]:size-6",
       },
     },
     defaultVariants: {
@@ -60,7 +60,7 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "bg-bg-muted flex size-full items-center justify-center rounded-full",
+        "bg-bg-accent-emphasis text-fg-on-emphasis flex size-full items-center justify-center rounded-full",
         className,
       )}
       {...props}

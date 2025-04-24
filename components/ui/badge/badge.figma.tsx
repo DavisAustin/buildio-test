@@ -7,7 +7,7 @@ figma.connect(
   "https://www.figma.com/design/7gFdOSsbUxcHxyp84Ql45Z/%F0%9F%8C%90-OPL-Components-Beta?node-id=114-602&t=05zr8qkSdVaRrvJn-4",
   {
     props: {
-
+      label: figma.string("label"),
       variant: figma.enum('variant', {
         "primary": "primary",
         "secondary": "secondary",
@@ -23,11 +23,15 @@ figma.connect(
         "sm": "sm",
         "default": "default",
         "lg": "lg",
-      })
+      }),
+      icon: figma.instance("icon"),
     },
-    example: (props) => <Badge
-    variant={props.variant}
-    size={props.size}
-    />,
+    example: ({label, variant, size, icon}) => <Badge
+    variant={variant}
+    size={size}
+    >
+      {icon}
+      {label}
+    </Badge>,
   },
 )
