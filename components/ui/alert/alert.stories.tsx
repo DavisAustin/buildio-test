@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AlertCircle, CheckCircle, Info } from "lucide-react";
+import { AlertCircle, Info } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from '@fortawesome/pro-solid-svg-icons';
 
 import {
   Alert,
   AlertDescription,
   AlertTitle,
 } from "@/components/ui/alert/alert";
-
 /**
  * Displays a callout for user attention.
  */
@@ -47,7 +48,7 @@ export const Default: Story = {
 export const Success: Story = {
   render: (args) => (
     <Alert {...args}>
-      <CheckCircle className="text-fg-success size-4" />
+      <FontAwesomeIcon icon={faCircleCheck} className="size-4 text-fg-success" />
       <AlertTitle>Email sent!</AlertTitle>
       <AlertDescription>
         Your email has been sent.
