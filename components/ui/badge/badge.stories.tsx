@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Badge } from "@/components/ui/badge/badge";
-import { Calendar } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/pro-solid-svg-icons";
 
 /**
  * Displays a badge or a component that looks like a badge.
@@ -129,8 +130,14 @@ export const Large: Story = {
  * This is the badge with an icon.
  */
 export const WithIcon: Story = {
-  render: (args) => <Badge {...args}><Calendar />Calendar</Badge>,
+  render: (args) => (
+    <Badge {...args}>
+      <FontAwesomeIcon icon={faArrowUp} />
+      8%
+    </Badge>
+  ),
   args: {
-    variant: "primary",
+    variant: "success",
+    size: "sm"
   },
 };

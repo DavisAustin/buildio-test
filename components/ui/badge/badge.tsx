@@ -10,8 +10,8 @@ const badgeVariants = cva(
     variants: {
       variant: {
         primary:
-          "border bg-bg-default text-fg-default [a&]:hover:bg-bg-default-hover",
-        secondary: "bg-bg-muted text-fg-default [a&]:hover:bg-bg-subtle-hover",
+          "border bg-bg-default text-fg-default [&_svg:not([class*='text-'])]:text-fg-muted [a&]:hover:bg-bg-default-hover",
+        secondary: "bg-bg-muted text-fg-default [&_svg:not([class*='text-'])]:text-fg-muted [a&]:hover:bg-bg-subtle-hover",
         emphasis:
           "bg-bg-emphasis text-fg-on-emphasis [a&]:hover:bg-bg-emphasis-hover",
         accent:
