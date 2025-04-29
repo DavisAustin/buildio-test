@@ -1,8 +1,9 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
-import { ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronRight, faEllipsis } from "@fortawesome/pro-solid-svg-icons"
 
 function Breadcrumb({ ...props }: React.ComponentProps<"nav">) {
   return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />
@@ -13,7 +14,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        "text-fg-muted flex flex-wrap items-center gap-1.5 text-body-sm break-words sm:gap-2.5",
+        "flex flex-wrap items-center gap-0.5 text-body-md break-words sm:gap-1",
         className
       )}
       {...props}
@@ -25,7 +26,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn("inline-flex items-center gap-1.5", className)}
+      className={cn("inline-flex text-fg-muted items-center gap-1.5", className)}
       {...props}
     />
   )
@@ -43,7 +44,7 @@ function BreadcrumbLink({
   return (
     <Comp
       data-slot="breadcrumb-link"
-      className={cn("hover:text-fg-default transition-colors", className)}
+      className={cn("rounded-sm hover:cursor-pointer px-1 hover:text-fg-accent hover:bg-bg-accent transition-colors", className)}
       {...props}
     />
   )
@@ -56,7 +57,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("text-fg-default", className)}
+      className={cn("text-fg-default px-1 pointer-events-none", className)}
       {...props}
     />
   )
@@ -72,10 +73,10 @@ function BreadcrumbSeparator({
       data-slot="breadcrumb-separator"
       role="presentation"
       aria-hidden="true"
-      className={cn("[&>svg]:size-3.5", className)}
+      className={cn("flex justify-center text-fg-muted [&>svg]:size-3", className)}
       {...props}
     >
-      {children ?? <ChevronRight />}
+      {children ?? <FontAwesomeIcon icon={faChevronRight} className="size-3!" />}
     </li>
   )
 }
@@ -92,7 +93,7 @@ function BreadcrumbEllipsis({
       className={cn("flex size-9 items-center justify-center", className)}
       {...props}
     >
-      <MoreHorizontal className="size-4" />
+      <FontAwesomeIcon icon={faEllipsis} />
       <span className="sr-only">More</span>
     </span>
   )
