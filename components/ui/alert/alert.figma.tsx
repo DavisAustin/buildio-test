@@ -1,7 +1,8 @@
 import React from "react";
 import { Alert, AlertTitle, AlertDescription } from "./alert";
-import { CheckCircle, CircleAlert, Info } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { figma } from "@figma/code-connect";
+import { faCircleCheck, faCircleExclamation, faCircleInfo } from "@fortawesome/pro-solid-svg-icons";
 
 figma.connect(
   Alert,
@@ -9,10 +10,19 @@ figma.connect(
   {
     props: {
       variant: figma.enum("variant", {
-        default: <Info className="text-fg-info size-4" />,
-        success: <CheckCircle className="text-fg-success size-4" />,
-        info: <Info className="text-fg-info size-4" />,
-        danger: <CircleAlert className="text-fg-danger size-4" />,
+        default: undefined,
+        success: <FontAwesomeIcon
+                icon={faCircleCheck}
+                className="text-fg-success size-4"
+              />,
+        info: <FontAwesomeIcon
+                icon={faCircleInfo}
+                className="text-fg-info size-4"
+              />,
+        danger: <FontAwesomeIcon
+                icon={faCircleExclamation}
+                className="text-fg-danger size-4"
+              />
       }),
       alertTitle: figma.string("alertTitle"),
       alertDescription: figma.string("alertDescription"),
