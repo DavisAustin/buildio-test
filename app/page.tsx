@@ -7,7 +7,7 @@ import {
 import { Badge } from "@/components/ui/badge/badge";
 import { Button } from "@/components/ui/button/button";
 import { IconButton } from "@/components/ui/icon-button/icon-button";
-import { faCheckCircle, faHouse } from "@fortawesome/pro-regular-svg-icons";
+import { faHouse } from "@fortawesome/pro-regular-svg-icons";
 import { faCircleCheck } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AlertCircle, Plus, User } from "lucide-react";
