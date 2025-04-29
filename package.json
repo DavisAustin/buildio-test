@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build",
-    "publish-figma": "npx figma connect publish"
+    "storybook:build": "storybook build",
+    "figma:publish": "npx figma connect publish --token=figd_FD7iFggDC9IJ77aynBNiTbGGSHLSDLEwOf0INSkP"
   },
   "dependencies": {
     "@awesome.me/kit-058b39ae53": "^1.0.7",
@@ -57,7 +57,7 @@
     "next": "15.2.4",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
-    "react-day-picker": "^9.4.3",
+    "react-day-picker": "^8.10.1",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
     "react-resizable-panels": "^2.1.7",
