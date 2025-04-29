@@ -1,3 +1,4 @@
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert/alert";
 import {
   Avatar,
   AvatarFallback,
@@ -6,6 +7,9 @@ import {
 import { Badge } from "@/components/ui/badge/badge";
 import { Button } from "@/components/ui/button/button";
 import { IconButton } from "@/components/ui/icon-button/icon-button";
+import { faCheckCircle, faHouse } from "@fortawesome/pro-regular-svg-icons";
+import { faCircleCheck } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AlertCircle, Plus, User } from "lucide-react";
 
 export default function Home() {
@@ -45,6 +49,19 @@ export default function Home() {
         </div>
         <div className="flex flex-row gap-4">
           {/* Add components here... */}
+          <FontAwesomeIcon icon={faHouse} className="text-fg-default size-4 shrink-0" />
+          <FontAwesomeIcon
+            icon={faCircleCheck}
+            className="text-fg-success size-4 shrink-0"
+          />
+          <Alert>
+            <FontAwesomeIcon
+              icon={faCircleCheck}
+              className="text-fg-success size-4 shrink-0"
+            />
+            <AlertTitle>Alert Title</AlertTitle>
+            <AlertDescription>Alert description...</AlertDescription>
+          </Alert>
         </div>
       </div>
     </main>
